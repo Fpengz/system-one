@@ -361,12 +361,90 @@ tr:hover td {
   overflow-x: auto;
 }
 .diagram-svg-container {
-  max-width: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow-x: auto;
 }
-.diagram-svg-container svg {
+.diagram-svg-container svg,
+.diagram-wrapper svg,
+svg.flowchart {
+  max-width: 100%;
   height: auto;
   display: block;
   margin: 0 auto;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif !important;
+  overflow: visible !important;
+}
+
+.diagram-svg-container svg p,
+.diagram-wrapper svg p,
+svg.flowchart p {
+  font-size: 12px !important;
+  line-height: 1.35 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.diagram-svg-container svg span,
+.diagram-wrapper svg span,
+svg.flowchart span,
+.diagram-svg-container svg div,
+.diagram-wrapper svg div,
+svg.flowchart div {
+  font-size: 12px !important;
+  line-height: 1.35 !important;
+}
+
+.diagram-svg-container svg .cluster-label p,
+.diagram-wrapper svg .cluster-label p,
+svg.flowchart .cluster-label p {
+  font-size: 11.5px !important;
+  font-weight: 600 !important;
+  line-height: 1.2 !important;
+  letter-spacing: -0.01em;
+}
+
+.diagram-svg-container svg .edgeLabel p,
+.diagram-wrapper svg .edgeLabel p,
+svg.flowchart .edgeLabel p {
+  font-size: 11px !important;
+  line-height: 1.2 !important;
+}
+
+.diagram-svg-container svg foreignObject,
+.diagram-wrapper svg foreignObject {
+  overflow: visible !important;
+}
+
+/* Dark Mode Diagram Adaptation */
+[data-theme="dark"] .diagram-svg-container svg text {
+  fill: #e2e8f0 !important;
+}
+[data-theme="dark"] .diagram-svg-container svg p,
+[data-theme="dark"] .diagram-svg-container svg span,
+[data-theme="dark"] .diagram-svg-container svg div,
+[data-theme="dark"] .diagram-svg-container svg .nodeLabel,
+[data-theme="dark"] .diagram-svg-container svg .cluster-label {
+  color: #e2e8f0 !important;
+}
+[data-theme="dark"] .diagram-svg-container svg .node rect,
+[data-theme="dark"] .diagram-svg-container svg .node polygon,
+[data-theme="dark"] .diagram-svg-container svg .node circle {
+  fill: #1e293b !important;
+  stroke: #475569 !important;
+}
+[data-theme="dark"] .diagram-svg-container svg .cluster rect {
+  fill: #0f172a !important;
+  stroke: #334155 !important;
+}
+[data-theme="dark"] .diagram-svg-container svg .edgePath path {
+  stroke: #60a5fa !important;
+}
+[data-theme="dark"] .diagram-svg-container svg .edgeLabel {
+  background-color: #0f172a !important;
+  color: #cbd5e1 !important;
 }
 .diagram-source-toggle {
   border-top: 1px solid var(--border-color);
